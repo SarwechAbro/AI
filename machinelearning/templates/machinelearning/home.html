@@ -61,20 +61,18 @@ body {
        
             <form  method="POST" action="{% url 'home' %}">
                 {% csrf_token %}
-              <label for="fname">Genere</label>
-              <input type="text" id="fname" name="genere" placeholder="Comedy">
           
-               <label for="lname">Hero</label>
-              <input type="text" id="lname" name="hero" placeholder="Robert Dawney Jr">
+               <label for="lname">Genre</label>
+              <input type="text" id="lname" name="genre" placeholder="Sci-Fi">
           
-              <label for="lname">Duration</label>
-              <input type="text" id="lname" name="duration" placeholder="Short/Long"> 
+              <label for="lname">Description</label>
+              <input type="text" id="lname" name="desc" placeholder="A Movie Based On Marvel charactors"> 
             
             
               <input type="submit" value="Submit">
               {% for predict in prediction %}
               <div class="alert alert-primary" role="alert">
-               You supposed to watch {{ predict }}
+               You supposed to watch '{{ predict }}'
               </div>
               {% endfor %} 
             </form>
